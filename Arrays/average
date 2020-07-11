@@ -1,0 +1,14 @@
+function average(array, currentIndex = 0) {
+  if (array.length === 0) {
+    return 0;
+  }
+  if (currentIndex === 0) {
+    return (
+      (array[0] + average(array.slice(1), currentIndex + 1)) / array.length
+    );
+  } else {
+    return array[0] + average(array.slice(1), currentIndex + 1);
+  }
+}
+var array = [10, 2, 3, 4, 8, 0];
+console.log(average(array));
