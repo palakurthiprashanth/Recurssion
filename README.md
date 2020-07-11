@@ -101,7 +101,33 @@ The local variables in the iterative version turn into parameters in the recursi
 
 Compile and rerun tests.
 
+### string reversal
 
+```javascript
+function reverseString(string) {
+  var reverse = "";
+  var size = string.length - 1;
+  while (size >= 0) {
+    reverse = reverse + string[size];
+    size = size - 1;
+  }
+  return reverse;
+}
+console.log(reverseString("abc"));
+
+function reverseRecursive(string) {
+  if (string === "") {
+    return string;
+  } else {
+    return (
+      string[string.length - 1] +
+      reverseString(string.substr(0, string.length - 1))
+    );
+  }
+}
+console.log(reverseRecursive("abc"));
+
+```
 
 
 
